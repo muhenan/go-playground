@@ -13,9 +13,13 @@ func Concurrent() {
 	for i := 1; i <= 2; i++ {
 		wg.Add(1)
 		go func(id int) {
-			defer wg.Done()
+			defer func() {
+				fmt.Println("goroutine ", id, " completed")
+				wg.Done()
+			}()
 			for j := 1; j <= 5; j++ {
 				ch <- id*10 + j
+				fmt.Println(id, " ", id*10+j)
 			}
 		}(i)
 	}
