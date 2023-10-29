@@ -5,11 +5,12 @@ import (
 	"go-playground/calculator"
 	"go-playground/packages/concurrent"
 	"go-playground/packages/slice"
+	"go-playground/webapp"
 )
 
 func main() {
 	fmt.Println("Hello, World!")
-	var n = 2
+	var n = 3
 	switch n {
 	case 0:
 		calculator.Calculator()
@@ -17,5 +18,7 @@ func main() {
 		slice.Slice()
 	case 2:
 		concurrent.Concurrent()
+	case 3:
+		webapp.StartServer()
 	}
 }
