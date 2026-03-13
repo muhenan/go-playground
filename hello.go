@@ -10,7 +10,7 @@ import (
 
 func main() {
 	fmt.Println("Hello, World!")
-	var n = 3
+	var n = 2
 	switch n {
 	case 0:
 		calculator.Calculator()
